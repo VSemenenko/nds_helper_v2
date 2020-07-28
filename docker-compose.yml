@@ -1,0 +1,14 @@
+# make sure you have Docker installed and then run in cmd: docker-compose up -d
+version: "3"
+services:
+  nds_db:
+    image: "postgres"
+    container_name: "nds_db"
+    environment:
+      - POSTGRES_DB=nds
+      - POSTGRES_USER=nds
+      - POSTGRES_PASSWORD=nds
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/nds_db/data
