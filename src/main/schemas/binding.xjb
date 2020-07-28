@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings version="2.1"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+               jaxb:extensionBindingPrefixes="xjc annox inherit">
+
+
+    <jaxb:bindings schemaLocation="NO_NDS.8_1_003_01_05_05_04.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="nds.schema.purchase-book" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="NO_NDS.9_1_003_03_05_05_02.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="nds.schema.sales-book" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="NO_NDS_1_003_00_05_06_03.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="nds.schema.title-page" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>

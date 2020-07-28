@@ -1,0 +1,79 @@
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+              jxb:extensionBindingPrefixes="xjc">
+    <jxb:bindings schemaLocation="NO_NDS.9_1_003_03_05_05_02.xsd" node="/xs:schema">
+        <jxb:bindings node="//*/xs:element[@name='Файл']">
+            <jxb:class name="FileSalesBook"/>
+            <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Документ']/xs:complexType">
+                <jxb:class name="DocumentSalesBook"/>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КнигаПрод']/xs:complexType">
+                    <jxb:class name="SalesBook"/>
+                    <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КнПродСтр']/xs:complexType">
+                        <jxb:class name="knProdStr"/>
+                        <jxb:bindings
+                                node="//*/xs:complexType/xs:sequence/xs:element[@name='КодВидОпер']/xs:simpleType">
+                            <jxb:typesafeEnumClass name="KodVidOper">
+                                <jxb:typesafeEnumMember name="ONE" value="01"/>
+                                <jxb:typesafeEnumMember name="TWO" value="02"/>
+                                <jxb:typesafeEnumMember name="SIX" value="06"/>
+                                <jxb:typesafeEnumMember name="TEN" value="10"/>
+                                <jxb:typesafeEnumMember name="THIRTEEN" value="13"/>
+                                <jxb:typesafeEnumMember name="FOURTEEN" value="14"/>
+                                <jxb:typesafeEnumMember name="FIFTEEN" value="15"/>
+                                <jxb:typesafeEnumMember name="EIGHTEEN" value="18"/>
+                                <jxb:typesafeEnumMember name="TWENTY_ONE" value="21"/>
+                                <jxb:typesafeEnumMember name="TWENTY_SIX" value="26"/>
+                                <jxb:typesafeEnumMember name="TWENTY_SEVEN" value="27"/>
+                                <jxb:typesafeEnumMember name="TWENTY_EIGHT" value="28"/>
+                                <jxb:typesafeEnumMember name="TWENTY_NINE" value="29"/>
+                                <jxb:typesafeEnumMember name="THIRTY" value="30"/>
+                                <jxb:typesafeEnumMember name="THIRTY_ONE" value="31"/>
+                                <jxb:typesafeEnumMember name="THIRTY_THREE" value="33"/>
+                                <jxb:typesafeEnumMember name="THIRTY_FOUR" value="34"/>
+                                <jxb:typesafeEnumMember name="THIRTY_FIVE" value="35"/>
+                                <jxb:typesafeEnumMember name="THIRTY_SEVEN" value="37"/>
+                                <jxb:typesafeEnumMember name="THIRTY_EIGHT" value="38"/>
+                                <jxb:typesafeEnumMember name="THIRTY_NINE" value="39"/>
+                                <jxb:typesafeEnumMember name="FORTY" value="40"/>
+                                <jxb:typesafeEnumMember name="FORTY_ONE" value="41"/>
+                                <jxb:typesafeEnumMember name="FORTY_TWO" value="42"/>
+                                <jxb:typesafeEnumMember name="FORTY_THREE" value="43"/>
+                                <jxb:typesafeEnumMember name="FORTY_FOUR" value="44"/>
+                            </jxb:typesafeEnumClass>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КодВидОпер']">
+                            <jxb:property name="kodVidOper"/>
+                        </jxb:bindings>
+                    </jxb:bindings>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='Индекс']/xs:simpleType">
+                    <jxb:typesafeEnumClass name="Index">
+                        <jxb:typesafeEnumMember name="ZERO_ZERO_ZERO_ZERO_ZERO_NINE_ZERO" value="0000090"/>
+                    </jxb:typesafeEnumClass>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='Индекс']">
+                    <jxb:property name="index"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнСвед9']/xs:simpleType">
+                    <jxb:typesafeEnumClass name="PriznSved9">
+                        <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                        <jxb:typesafeEnumMember name="ONE" value="1"/>
+                    </jxb:typesafeEnumClass>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнСвед9']">
+                    <jxb:property name="priznSved9"/>
+                </jxb:bindings>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсФорм']/xs:simpleType">
+                <jxb:typesafeEnumClass name="VersForm">
+                    <jxb:typesafeEnumMember name="FIVE_DOT_ZERO_FIVE" value="5.05"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсФорм']">
+                <jxb:property name="versForm"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>

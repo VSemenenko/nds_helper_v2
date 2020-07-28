@@ -1,0 +1,45 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 10000
+        order_inserts: true
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.StdDateFormat
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+    default-property-inclusion: always
+  thymeleaf:
+    prefix: classpath:static/
+
+  #  liquibase:
+#    enabled: false
+#    change-log: classpath:db.changelog-master.xml
+  datasource:
+    url: jdbc:postgresql://192.168.99.100:5432/nds
+    username: nds
+    password: nds
+    driverClassName: org.postgresql.Driver
+    testOnBorrow: true
+    testWhileIdle: true
+#  jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
+
+logging:
+  level:
+    ROOT: INFO
+
+app:
+  config:
+    query-company-info:
+      ifnsURL: api-fns.ru
+      ifnsUrlPath: /api/egr
+      ifnsAPIkey: aa26c4227fce4cd279be1e1fb86370f014265856
+      fiasUrl: kladr-api.ru
+      fiasURLPath: /api.php
+      fiasContentType: building
+      fiasLimit: 1
+      fiasWithParent: 1
+
+
+

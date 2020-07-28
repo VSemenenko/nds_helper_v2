@@ -1,0 +1,275 @@
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+              jxb:extensionBindingPrefixes="xjc">
+    <jxb:bindings schemaLocation="NO_NDS_1_003_00_05_06_03.xsd" node="/xs:schema">
+        <jxb:bindings node="//*/xs:element[@name='Файл']">
+            <jxb:class name="TitlePage"/>
+            <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Документ']/xs:complexType">
+                <jxb:class name="TitlePageDocument"/>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвНП']/xs:complexType">
+                    <jxb:class name="SvNP"/>
+                    <jxb:bindings node="//*/xs:complexType/xs:choice/xs:element[@name='НПЮЛ']/xs:complexType">
+                        <jxb:class name="NPUL"/>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвРеоргЮЛ']/xs:complexType">
+                            <jxb:class name="SvReorgUL"/>
+                            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ФормРеорг']/xs:simpleType">
+                                        <jxb:typesafeEnumClass name="FormReorg">
+                                        <jxb:typesafeEnumMember name="ONE" value="1"/>
+                                        <jxb:typesafeEnumMember name="TWO" value="2"/>
+                                        <jxb:typesafeEnumMember name="THREE" value="3"/>
+                                        <jxb:typesafeEnumMember name="FIVE" value="5"/>
+                                        <jxb:typesafeEnumMember name="SIX" value="6"/>
+                                        <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                                        </jxb:typesafeEnumClass>
+                                    </jxb:bindings>
+                            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ФормРеорг']">
+                                <jxb:property name="formReorg"/>
+                            </jxb:bindings>
+                            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ИННЮЛ']" multiple="true">
+                                <jxb:property name="innUl"/>
+                            </jxb:bindings>
+                            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='КПП']" multiple="true">
+                                <jxb:property name="kpp"/>
+                            </jxb:bindings>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвРеоргЮЛ']">
+                            <jxb:property name="svReorgUL"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НаимОрг']" multiple="true">
+                            <jxb:property name="naimOrg"/>
+                        </jxb:bindings>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:choice/xs:element[@name='НПЮЛ']">
+                        <jxb:property name="npul"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:choice/xs:element[@name='НПФЛ']/xs:complexType">
+                        <jxb:class name="NPFL"/>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='ФИО']" multiple="true">
+                            <jxb:property name="fio"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ИННФЛ']">
+                            <jxb:property name="innFL"/>
+                        </jxb:bindings>
+<!--                        тут должен быть NPFL-->
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:choice/xs:element[@name='НПФЛ']">
+                        <jxb:property name="npfl"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ОКВЭД']">
+                        <jxb:property name="OKVED"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='Тлф']">
+                        <jxb:property name="Tlf"/>
+                    </jxb:bindings>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвНП']">
+                    <jxb:property name="svNP"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Подписант']/xs:complexType">
+                    <jxb:class name="Podpisant"/>
+
+                    <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвПред']/xs:complexType">
+                        <jxb:class name="SvPred"/>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НаимДок']">
+                            <jxb:property name="naimDok"/>
+                        </jxb:bindings>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвПред']">
+                        <jxb:property name="svPred"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType//xs:attribute[@name='ПрПодп']">
+                        <jxb:property name="prPodp"/>
+                    </jxb:bindings>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Подписант']">
+                    <jxb:property name="podpisant"/>
+                </jxb:bindings>
+
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='НДС']/xs:complexType">
+                    <jxb:class name="NDS"/>
+
+                    <!--                    тут должен быть NDS-->
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='НДС']">
+                    <jxb:property name="nds"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='КНД']/xs:simpleType" multiple="true">
+                    <jxb:typesafeEnumClass name="KND">
+                        <jxb:typesafeEnumMember name="ONE_ONE_FIVE_ONE_ZERO_ZERO_ONE" value="1151001"/>
+                    </jxb:typesafeEnumClass>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='КНД']">
+                    <jxb:property name="knd"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ДатаДок']">
+                    <jxb:property name="dataDoc"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='Период']/xs:simpleType" multiple="true">
+                    <jxb:typesafeEnumClass name="Period">
+                        <jxb:typesafeEnumMember name="ONE" value="01"/>
+                        <jxb:typesafeEnumMember name="TWO" value="02"/>
+                        <jxb:typesafeEnumMember name="THREE" value="03"/>
+                        <jxb:typesafeEnumMember name="FOUR" value="04"/>
+                        <jxb:typesafeEnumMember name="FIVE" value="05"/>
+                        <jxb:typesafeEnumMember name="SIX" value="06"/>
+                        <jxb:typesafeEnumMember name="SEVEN" value="07"/>
+                        <jxb:typesafeEnumMember name="EIGHT" value="08"/>
+                        <jxb:typesafeEnumMember name="NINE" value="09"/>
+                        <jxb:typesafeEnumMember name="TEN" value="10"/>
+                        <jxb:typesafeEnumMember name="ELEVEN" value="11"/>
+                        <jxb:typesafeEnumMember name="TWELVE" value="12"/>
+                        <jxb:typesafeEnumMember name="TWENTY_ONE" value="21"/>
+                        <jxb:typesafeEnumMember name="TWENTY_TWO" value="22"/>
+                        <jxb:typesafeEnumMember name="TWENTY_THREE" value="23"/>
+                        <jxb:typesafeEnumMember name="TWENTY_FOUR" value="24"/>
+                        <jxb:typesafeEnumMember name="FIFTY_ONE" value="51"/>
+                        <jxb:typesafeEnumMember name="FIFTY_FOUR" value="54"/>
+                        <jxb:typesafeEnumMember name="FIFTY_FIVE" value="55"/>
+                        <jxb:typesafeEnumMember name="FIFTY_SIX" value="56"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_ONE" value="71"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_TWO" value="72"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_THREE" value="73"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_FOUR" value="74"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_FIVE" value="75"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_SIX" value="76"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_SEVEN" value="77"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_EIGHT" value="78"/>
+                        <jxb:typesafeEnumMember name="SEVENTY_NINE" value="79"/>
+                        <jxb:typesafeEnumMember name="EIGHTY" value="80"/>
+                        <jxb:typesafeEnumMember name="EIGHTY_ONE" value="81"/>
+                        <jxb:typesafeEnumMember name="EIGHTY_TWO" value="82"/>
+                    </jxb:typesafeEnumClass>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='Период']" multiple="true">
+                    <jxb:property name="period"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ОтчетГод']" multiple="true">
+                    <jxb:property name="otchetGod"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='КодНО']" multiple="true">
+                    <jxb:property name="kodNO"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомКорр']">
+                    <jxb:property name="nomKorr"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПоМесту']/xs:simpleType">
+                    <jxb:typesafeEnumClass name="PoMesty">
+                        <jxb:typesafeEnumMember name="ONE_HUNDRED_SIXTEEN" value="116"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_THIRTEEN" value="213"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_FOURTEEN" value="214"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_FIFTEEN" value="215"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_SIXTEEN" value="216"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_TWENTY_SEVEN" value="227"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_THIRTY_ONE" value="231"/>
+                        <jxb:typesafeEnumMember name="TWO_HUNDRED_FIFTY" value="250"/>
+                        <jxb:typesafeEnumMember name="THREE_THIRTY_ONE" value="331"/>
+                    </jxb:typesafeEnumClass>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПоМесту']">
+                    <jxb:property name="poMesty"/>
+                </jxb:bindings>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Документ']">
+                <jxb:property name="titlePageDocument"/>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ИдФайл']">
+                <jxb:property name="idFile"/>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсПрог']">
+                <jxb:property name="versProg"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсФорм']/xs:simpleType">
+                <jxb:typesafeEnumClass name="VersForm">
+                    <jxb:typesafeEnumMember name="FIVE_DOT_ZERO_SIX" value="5.06"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсФорм']">
+                <jxb:property name="versForm"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал8-12']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal8_12">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал8-12']">
+                <jxb:property name="priznNal8_12"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал8']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal8">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал8']">
+                <jxb:property name="priznNal8"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал81']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal81">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал81']">
+                <jxb:property name="priznNal81"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал9']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal9">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал9']">
+                <jxb:property name="priznNal9"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал91']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal91">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал91']">
+                <jxb:property name="priznNal91"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал10']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal10">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал10']">
+                <jxb:property name="priznNal10"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал11']/xs:simpleType">
+                <jxb:typesafeEnumClass name="priznNal11">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал11']">
+                <jxb:property name="priznNal11"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал12']/xs:simpleType">
+                <jxb:typesafeEnumClass name="PriznNal12">
+                    <jxb:typesafeEnumMember name="ZERO" value="0"/>
+                    <jxb:typesafeEnumMember name="ONE" value="1"/>
+                </jxb:typesafeEnumClass>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнНал12']">
+                <jxb:property name="priznNal12"/>
+            </jxb:bindings>
+
+        </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>

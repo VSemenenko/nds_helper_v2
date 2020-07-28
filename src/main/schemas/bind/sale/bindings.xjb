@@ -1,0 +1,184 @@
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+              jxb:extensionBindingPrefixes="xjc">
+    <jxb:bindings schemaLocation="NO_NDS.9_1_003_03_05_05_02.xsd" node="/xs:schema">
+        <jxb:bindings node="//*/xs:element[@name='Файл']">
+            <jxb:class name="FileSalesBook"/>
+            <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Документ']/xs:complexType">
+                <jxb:class name="DocumentSalesBook"/>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КнигаПрод']/xs:complexType">
+                    <jxb:class name="SalesBook"/>
+                    <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КнПродСтр']/xs:complexType">
+                        <jxb:class name="knProdStr"/>
+
+
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КодВидОпер']">
+                            <jxb:property name="kodVidOper"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='РегНомТД']">
+                            <jxb:property name="regNomTD"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='ДокПдтвОпл']/xs:complexType">
+                            <jxb:class name="DokPdtvOpl"/>
+                            <!--                            тут должен быть DokPdtvOpl-->
+                            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомДокПдтвОпл']">
+                                <jxb:property name="nomDokPdtvOpl"/>
+                            </jxb:bindings>
+                            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ДатаДокПдтвОпл']">
+                                <jxb:property name="dataDokPdtvOpl"/>
+                            </jxb:bindings>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='ДокПдтвОпл']">
+                            <jxb:property name="dokPdtvOpl"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвПокуп']">
+                            <jxb:property name="svPokyp"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='СвПос']">
+                            <jxb:property name="svPos"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомерПор']">
+                            <jxb:property name="nomerPor"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомСчФПрод']">
+                            <jxb:property name="nomSchFProd"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ДатаСчФПрод']">
+                            <jxb:property name="dataSchFProd"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомИспрСчФ']">
+                            <jxb:property name="nomIsprSchF"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ДатаИспрСчФ']">
+                            <jxb:property name="dataIsprSchF"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомКСчФПрод']">
+                            <jxb:property name="nomKSchFProd"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ДатаКСчФПрод']">
+                            <jxb:property name="dataKSchFProd"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомИспрКСчФ']">
+                            <jxb:property name="nomIsprKSchF"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ДатаИспрКСчФ']">
+                            <jxb:property name="dataIsprKSchF"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ОКВ']">
+                            <jxb:property name="OKV"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтоимПродСФВ']">
+                            <jxb:property name="stoimProdSFV"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтоимПродСФ']">
+                            <jxb:property name="stoimProdSF"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтоимПродСФ18']">
+                            <jxb:property name="stoimProdSF18"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтоимПродСФ10']">
+                            <jxb:property name="stoimProdSF10"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтоимПродСФ0']">
+                            <jxb:property name="stoimProdSF0"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СумНДССФ18']">
+                            <jxb:property name="sumNDSSF18"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СумНДССФ10']">
+                            <jxb:property name="sumNDSSF10"/>
+                        </jxb:bindings>
+                        <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтоимПродОсв']">
+                            <jxb:property name="stoimProdOsv"/>
+                        </jxb:bindings>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КнПродСтр']">
+                        <jxb:property name="knProdStr"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтПродБезНДС18']">
+                        <jxb:property name="stProdBezNDS18"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтПродБезНДС10']">
+                        <jxb:property name="stProdBezNDS10"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтПродБезНДС0']">
+                        <jxb:property name="stProdBezNDS0"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СумНДСВсКПр18']">
+                        <jxb:property name="sumNDSVsKPr18"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СумНДСВсКПр10']">
+                        <jxb:property name="sumNDSVsKPr10"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='СтПродОсвВсКПр']">
+                        <jxb:property name="stProdOsvVsKPr"/>
+                    </jxb:bindings>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='КнигаПрод']">
+                    <jxb:property name="salesBook"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='Индекс']">
+                    <jxb:property name="index"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='НомКорр']">
+                    <jxb:property name="nomKorr"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ПризнСвед9']">
+                    <jxb:property name="priznSved9"/>
+                </jxb:bindings>
+
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:sequence/xs:element[@name='Документ']">
+                <jxb:property name="documentSalesBook"/>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ИдФайл']">
+                <jxb:property name="idFile"/>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсПрог']">
+                <jxb:property name="versProg"/>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ВерсФорм']">
+                <jxb:property name="versForm"/>
+            </jxb:bindings>
+
+            <jxb:bindings node="//*/xs:complexType[@name='СвУчСдТип']">
+                <jxb:class name="SvYchSdTip"/>
+                <jxb:bindings node="//*/xs:choice/xs:element[@name='СведЮЛ']/xs:complexType">
+                    <jxb:class name="SvedUL"/>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ИННЮЛ']">
+                        <jxb:property name="innUL"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='КПП']">
+                        <jxb:property name="kpp"/>
+                    </jxb:bindings>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:choice/xs:element[@name='СведЮЛ']">
+                    <jxb:property name="svedUL"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:choice/xs:element[@name='СведИП']/xs:complexType">
+                    <jxb:class name="SvedIP"/>
+                    <jxb:bindings node="//*/xs:complexType/xs:attribute[@name='ИННФЛ']">
+                        <jxb:property name="innFL"/>
+                    </jxb:bindings>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:choice/xs:element[@name='СведИП']">
+                    <jxb:property name="svedIP"/>
+                </jxb:bindings>
+            </jxb:bindings>
+            <jxb:bindings node="//*/xs:complexType[@name='ФИОТип']">
+                <jxb:class name="FIOTip"/>
+                <jxb:bindings node="//*/xs:attribute[@name='Фамилия']">
+                    <jxb:property name="sureName"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:attribute[@name='Имя']">
+                    <jxb:property name="name"/>
+                </jxb:bindings>
+                <jxb:bindings node="//*/xs:attribute[@name='Отчество']">
+                    <jxb:property name="patronymic"/>
+                </jxb:bindings>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>
