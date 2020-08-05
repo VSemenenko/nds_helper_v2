@@ -4,6 +4,11 @@ import com.opencsv.bean.CsvBindByName;
 import lombok.Getter;
 import lombok.Setter;
 import com.opencsv.bean.CsvToBean;
+import org.apache.logging.log4j.util.Strings;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Arrays;
 
 @Setter
 @Getter
@@ -16,10 +21,10 @@ public class DealInfo {
     private String byerInn;
 
     @CsvBindByName(column = "дата_сделки")
-    private String date;
+    private String dateString;
 
     @CsvBindByName(column = "назначение_сделки")
-    private String dateAim;
+    private String dealAim;
 
     @CsvBindByName(column = "ед.изм")
     private String unit;

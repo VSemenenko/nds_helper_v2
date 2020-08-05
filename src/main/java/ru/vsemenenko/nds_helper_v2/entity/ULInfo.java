@@ -63,6 +63,9 @@ public class ULInfo {
     @JsonProperty("Адрес")
     private AddressInfo addressInfo;
 
+    @JsonProperty("Руководитель")
+    private ManagerInfo managerInfo;
+
     @JsonProperty("Учредители")
     private List<FounderInfo> founders;
 

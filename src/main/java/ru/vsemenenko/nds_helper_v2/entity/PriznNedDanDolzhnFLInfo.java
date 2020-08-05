@@ -9,6 +9,4 @@ public class PriznNedDanDolzhnFLInfo {
 
     @JsonProperty("Текст")
     private String text;
-
-
 }
