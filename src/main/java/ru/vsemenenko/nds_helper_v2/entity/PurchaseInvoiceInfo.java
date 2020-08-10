@@ -5,19 +5,21 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
+@Entity
 @Getter
 @Setter
-@Entity
-public class PurchaseBookInfo {
+public class PurchaseInvoiceInfo {
 
     @Id
     private Long id;
 
-    private String fileName;
+    private String number;
+
+    private LocalDate date;
+
+    private Double purchaseSum;
 
     private Double taxSum;
-
-    private List<>
-
 }

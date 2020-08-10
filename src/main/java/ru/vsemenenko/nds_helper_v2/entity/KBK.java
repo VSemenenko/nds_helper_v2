@@ -4,18 +4,18 @@ public enum KBK {
 
     NDS_SUM("18210301000011000110") ;
 
-    private String title;
+    private String value;
 
-    KBK(String title) {
-        this.title = title;
+    KBK(String value) {
+        this.value = value;
     }
 
-    public String getTitle() {
-        return title;
+    public String getValue() {
+        return value;
     }
 
     @Override
     public String toString() {
-        return title;
+        return value;
     }
 }

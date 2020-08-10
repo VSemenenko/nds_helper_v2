@@ -5,6 +5,8 @@ import nds.schema.first_page.FIOTip;
 import nds.schema.first_page.ObjectFactory;
 import nds.schema.first_page.TitlePage;
 import ru.vsemenenko.nds_helper_v2.entity.*;
+import ru.vsemenenko.nds_helper_v2.entity.companyInfo.ManagerInfo;
+import ru.vsemenenko.nds_helper_v2.entity.companyInfo.ULInfo;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigInteger;
@@ -55,9 +57,7 @@ public class DeclarationMapper {
         document.setOtcetGod(getYear(titlePageInfo));
         document.setKodNO(getTaxDepartmentCode(titlePageInfo));
         document.setNomKorr(BigInteger.valueOf(titlePageInfo.getCorNumber()));
-        document.setPoMesty(poMesty);
-        document.setSvNP(getSvNP(titlePageInfo));
-//        document.setPodpisant();
+        document.setPodpisant(getPodpisant(titlePageInfo));
         document.setNDS(getNDS(titlePageInfo));
         return document;
     }
@@ -77,15 +77,24 @@ public class DeclarationMapper {
     private FIOTip getFio(TitlePageInfo titlePageInfo){
         FIOTip fio = titlePageObjectFactory.createFIOTip();
         ManagerInfo managerInfo = titlePageInfo.getCompanyInfo().getUlInfo().getManagerInfo();
-//        fio.setFamilia(managerInfo.get);
+        List<String> fioInfo = separateFIO(managerInfo.getFioFull());
+        fio.setFamilia(fioInfo.get(0));
+        fio.setIma(fioInfo.get(1));
+        fio.setOtcestvo(fioInfo.get(2));
         return fio;
     }
 
 
     private TitlePage.TitlePageDocument.NDS getNDS(TitlePageInfo titlePageInfo){
         TitlePage.TitlePageDocument.NDS nds = titlePageObjectFactory.createTitlePageTitlePageDocumentNDS();
+        TitlePage.TitlePageDocument.NDS.SumUplNP sumUplNP = titlePageObjectFactory.createTitlePageTitlePageDocumentNDSSumUplNP();
+        sumUplNP.setOKTMO(titlePageInfo.getCompanyInfo().getOktmo());
+        sumUplNP.setKBK(KBK.NDS_SUM.getValue());
+        //todo дописать nds как только будет создана логика по расчету ндс
         return nds;
     }
+
+
 
     private TitlePage.TitlePageDocument.SvNP getSvNP(TitlePageInfo titlePageInfo){
         TitlePage.TitlePageDocument.SvNP svNP = titlePageObjectFactory.createTitlePageTitlePageDocumentSvNP();
@@ -120,4 +129,11 @@ public class DeclarationMapper {
     private List<String> separateFIO(String fio){
         return Arrays.asList(fio.split(" "));
     }
+
+    /* todo
+    private TitlePage.TitlePageDocument.NDS.SumUpl164 getSumUpl164(){
+
+    }
+     */
+
 }

@@ -2,10 +2,10 @@ package ru.vsemenenko.nds_helper_v2.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import ru.vsemenenko.nds_helper_v2.entity.companyInfo.CompanyInfo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 

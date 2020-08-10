@@ -1,12 +1,11 @@
 package ru.vsemenenko.nds_helper_v2.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import ru.vsemenenko.nds_helper_v2.entity.CompanyInfo;
+import ru.vsemenenko.nds_helper_v2.entity.companyInfo.CompanyInfo;
 import ru.vsemenenko.nds_helper_v2.service.CompanyInfoService;
 import ru.vsemenenko.nds_helper_v2.service.CsvParser;
 

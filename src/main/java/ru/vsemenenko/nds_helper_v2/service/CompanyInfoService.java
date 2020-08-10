@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import ru.vsemenenko.nds_helper_v2.config.CompanyInfoConfig;
-import ru.vsemenenko.nds_helper_v2.entity.CompanyInfo;
-import ru.vsemenenko.nds_helper_v2.entity.CompanyInfoResponse;
+import ru.vsemenenko.nds_helper_v2.entity.companyInfo.CompanyInfo;
+import ru.vsemenenko.nds_helper_v2.entity.companyInfo.CompanyInfoResponse;
 
 import java.net.URISyntaxException;
 
